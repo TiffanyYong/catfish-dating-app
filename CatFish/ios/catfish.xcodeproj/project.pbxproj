@@ -46,6 +46,7 @@
 		796332D9C3F5FF46205B94E9 /* libPods-catfish-catfishTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-catfish-catfishTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = catfish/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		889CF4C9C12849618585539F /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		8E57A402279D137200D5C084 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../app/assets/font/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		93190867E0F7E435092E0ABD /* Pods-catfish-catfishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catfish-catfishTests.release.xcconfig"; path = "Target Support Files/Pods-catfish-catfishTests/Pods-catfish-catfishTests.release.xcconfig"; sourceTree = "<group>"; };
 		988C93B809564A45ACB79F97 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		9EA0CD5BCF004F00AAC6B7FF /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8E57A402279D137200D5C084 /* Lato-Regular.ttf */,
 				13B07FAE1A68108700A75B9A /* catfish */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* catfishTests */,
