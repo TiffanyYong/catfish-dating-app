@@ -7,109 +7,97 @@
  */
 
 
+
 import React, {Component} from 'react';
 import {Platform} from 'react-native';
-import {createRootNavigator} from './router'
 import {Node} from 'react';
+import { NavigationContainer, createAppContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MatchScreen from "./containers/Match";
 
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
+  Image,
   StyleSheet,
   Text,
-  useColorScheme,
+  Dimensions,
+  //useColorScheme,
   View,
+  ImageBackground
 } from 'react-native';
 
 import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+ Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
-const Section = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+// function HomeScreen() {
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       <Text>Home!</Text>
+//     </View>
+//   );
+// }
+
+function SettingsScreen() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
     </View>
   );
-};
+}
 
-const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+const Tab = createBottomTabNavigator();
 
+export default function MyTabs(){
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            OMG IT WORKS????
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+    <NavigationContainer>
+        <Tab.Navigator
+            screenOptions={({ route }) => ({
+                tabBarIcon: ({ focused, color, size }) => {
+                    let iconName;
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+                    if (route.name === 'Explore') {
+                        iconName = focused
+                            ? 'ios-information-circle'
+                            : 'ios-information-circle-outline';
+                    } else if (route.name === 'Settings') {
+                        iconName = focused ? 'ios-list-box' : 'ios-list';
+                    }
 
-export default createRootNavigator();
+                    // You can return any component that you like here!
+                    return <Ionicons name={iconName} size={size} color={color} />;
+                },
+            })}
+            screenOptions={{
+                activeTintColor: 'tomato',
+                inactiveTintColor: 'gray',
+            }}
+
+        >
+            <Tab.Screen name="Explore" component={MatchScreen} />
+        </Tab.Navigator>
+    </NavigationContainer>
+);
+}
+
+	// {
+	// 	Explore: {
+	// 		screen: MatchScreen,
+	// 		navigationOptions: {
+	// 			tabBarIcon: ({ focused }) => {
+	// 				const iconFocused = focused ? "#7444C0" : "#363636";
+	// 				return (
+	// 					<Text style={[styles.iconMenu, { color: iconFocused }]}>
+	// 						<Icon name="explore" />
+	// 					</Text>
+	// 				);
+	// 			}
+	// 		}
+	// 	},
+  // });
+
+  // export default createAppContainer(App);

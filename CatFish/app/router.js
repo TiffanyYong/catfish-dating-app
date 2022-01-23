@@ -40,9 +40,11 @@ export const createRootNavigator = () => {
         {
             Tabs: {
                 screen: Tabs,
-                navigationOptions: ({navigation}) => ({
+                //navigationOptions: ({navigation}) => ({
+                navigationOptions: {
                     gesturesEnabled: false,
-                })
+                }
+                //})
             },
         },
         {
